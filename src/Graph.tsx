@@ -11,6 +11,7 @@ interface IProps {
 interface PerspectiveViewerElement extends HTMLElement {
   load: (table: Table) => void;
 }
+
 class Graph extends Component<IProps, {}> {
   table: Table | undefined;
 
@@ -44,9 +45,8 @@ class Graph extends Component<IProps, {}> {
       elem.setAttribute("row-pivots", '["timestamp"]');
       elem.setAttribute(
         "columns",
-        '["ratio", "lower_bound", "upper_bound", "lower_bound", "upper_bound","trigger_alert"]'
+        '["ratio", "lower_bound", "upper_bound", "trigger_alert"]'
       );
-
       elem.setAttribute(
         "aggregates",
         JSON.stringify({
